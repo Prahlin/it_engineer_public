@@ -11,7 +11,7 @@ headers = {
 # Student and assignment we are verifying
 params = {
     "student_name": "Marty McFly",
-    "assignment_id": "ASSIGNMENT_123"
+    "assignment_id": "ASSIGNMENT_1"
 }
 
 # Send request to LMS API
@@ -26,7 +26,7 @@ if response.status_code == 200:
     # Example simulated submission event
     submission_event = {
         "student_name": "Marty McFly",
-        "assignment_id": "ASSIGNMENT_123",
+        "assignment_id": "ASSIGNMENT_1",
         "submission_status": "submitted",
         "submitted_at": "2026-03-05T14:20:10",
         "attempt_id": "874293"
