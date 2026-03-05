@@ -1,8 +1,6 @@
 # LMS TROUBLESHOOTING: INSTRUCTOR UNABLE TO SEE STUDENT'S GRADE
 
-## (See `sample_submission_response.json`
-## for example LMS API responses
-## used during troubleshooting)
+## (See `sample_submission_response.json` for example LMS API responses used during troubleshooting)
 
 ## Issue Description
 
