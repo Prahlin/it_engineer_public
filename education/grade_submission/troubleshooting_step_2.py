@@ -1,45 +1,17 @@
-import requests
 import json
+from pathlib import Path
 
-# Example LMS API endpoint (placeholder)
-api_url = "https://httpbin.org/get"
+DATA_FILE = Path(__file__).parent / "sample_submission_response.json"
 
-headers = {
-    "Content-Type": "application/json"
-}
+def main():
+    evidence = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    step = evidence["troubleshooting_step_2"]
 
-# Student and assignment we are verifying
-params = {
-    "student_name": "Marty McFly",
-    "assignment_id": "ASSIGNMENT_1"
-}
+    print("=== Troubleshooting Step 2 ===")
+    print(step.get("description", ""))
+    print("Status code:", step.get("status_code"))
+    print("Submission event:")
+    print(json.dumps(step.get("submission_event", {}), indent=2))
 
-# Send request to LMS API
-response = requests.get(api_url, headers=headers, params=params)
-
-print("Status code:", response.status_code)
-
-if response.status_code == 200:
-
-    data = response.json()
-
-    # Example simulated submission event
-    submission_event = {
-        "student_name": "Marty McFly",
-        "assignment_id": "ASSIGNMENT_1",
-        "submission_status": "submitted",
-        "submitted_at": "2026-03-05T14:20:10",
-        "attempt_id": "874293"
-    }
-
-    print("\nSubmission Event Record:")
-    print(json.dumps(submission_event, indent=4))
-
-    if submission_event["submission_status"] == "submitted":
-        print("\nSubmission event successfully recorded in LMS API logs.")
-    else:
-        print("\nSubmission record found but status is not 'submitted'.")
-
-else:
-    print("Error retrieving submission event.")
-    print(response.text)
+if __name__ == "__main__":
+    main()
