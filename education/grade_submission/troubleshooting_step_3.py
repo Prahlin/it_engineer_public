@@ -1,37 +1,17 @@
-import requests
 import json
+from pathlib import Path
 
-# Example LMS API endpoint (placeholder)
-api_url = "https://httpbin.org/get"
+DATA_FILE = Path(__file__).parent / "sample_submission_response.json"
 
-headers = {
-    "Content-Type": "application/json"
-}
+def main():
+    evidence = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    step = evidence["troubleshooting_step_3"]
 
-# Student and assignment we are verifying
-params = {
-    "student_name": "Marty McFly",
-    "assignment_id": "ASSIGNMENT_1"
-}
+    print("=== Troubleshooting Step 3 ===")
+    print(step.get("description", ""))
+    print("Status code:", step.get("status_code"))
+    print("Gradebook record:")
+    print(json.dumps(step.get("gradebook_record", {}), indent=2))
 
-# Send request to LMS API
-response = requests.get(api_url, headers=headers, params=params)
-
-print("Status code:", response.status_code)
-
-if response.status_code == 200:
-    data = response.json()
-
-    print("\nAPI Response:")
-    print(json.dumps(data, indent=4))
-
-    # Example logic: check if gradebook fields exist
-    if "grade_status" in data:
-        print("\nGradebook record found.")
-        print("Grade status:", data["grade_status"])
-    else:
-        print("\nNo gradebook record found in API response.")
-
-else:
-    print("Error retrieving gradebook record.")
-    print(response.text)
+if __name__ == "__main__":
+    main()
