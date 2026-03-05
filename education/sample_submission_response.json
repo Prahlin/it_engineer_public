@@ -1,0 +1,30 @@
+{
+  "troubleshooting_step_1": {
+    "description": "Verify the LMS API request works and parameters are transmitted correctly.",
+    "status_code": 200,
+    "request_parameters": {
+      "student_name": "Marty McFly",
+      "assignment_id": "ASSIGNMENT_123"
+    },
+    "response_echo": {
+      "args": {
+        "student_name": "Marty McFly",
+        "assignment_id": "ASSIGNMENT_123"
+      },
+      "url": "https://httpbin.org/get?student_name=Marty+McFly&assignment_id=ASSIGNMENT_123"
+    }
+  },
+
+  "troubleshooting_step_2": {
+    "description": "Verify the LMS recorded the submission event for the student and assignment.",
+    "status_code": 200,
+    "submission_event": {
+      "student_name": "Marty McFly",
+      "assignment_id": "ASSIGNMENT_123",
+      "submission_status": "submitted",
+      "submitted_at": "2026-03-05T14:20:10",
+      "attempt_id": "874293",
+      "event_type": "submission_created"
+    }
+  }
+}
