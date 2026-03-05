@@ -2,7 +2,7 @@
 
 ## (See `sample_submission_response.json`
 ## for example LMS API responses
-#used during troubleshooting)
+## used during troubleshooting)
 
 ## Issue Description
 
