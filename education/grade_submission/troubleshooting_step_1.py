@@ -1,28 +1,17 @@
-import requests
+import json
+from pathlib import Path
 
-# Test API endpoint that echoes query parameters
-api_url = "https://httpbin.org/get"
+DATA_FILE = Path(__file__).parent / "sample_submission_response.json"
 
-headers = {
-    "Content-Type": "application/json"
-}
+def main():
+    evidence = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    step = evidence["troubleshooting_step_1"]
 
-# Student and assignment we want to verify
-params = {
-    "student_name": "Marty McFly",
-    "assignment_id": "ASSIGNMENT_1"
-}
+    print("=== Troubleshooting Step 1 ===")
+    print(step.get("description", ""))
+    print("Status code:", step.get("status_code"))
+    print("Request parameters:")
+    print(json.dumps(step.get("request_parameters", {}), indent=2))
 
-# Send GET request
-response = requests.get(api_url, headers=headers, params=params)
-
-# Print status code
-print("Status code:", response.status_code)
-
-# Show only the parameters returned by the server
-if response.status_code == 200:
-    data = response.json()
-    print("Student:", data["args"].get("student_name"))
-    print("Assignment:", data["args"].get("assignment_id"))
-else:
-    print("Error:", response.text)
+if __name__ == "__main__":
+    main()
