@@ -29,5 +29,34 @@
       "score": null,
       "graded_at": null
     }
+  },
+
+  "troubleshooting_step_4": {
+    "description": "Test grade/gradebook visibility using a second instructor account to determine whether the issue is user-specific (permissions/role/cache).",
+    "instructor_visibility_check": {
+      "primary_instructor": {
+        "instructor_username": "instructor_primary",
+        "student_name": "Marty McFly",
+        "assignment_id": "ASSIGNMENT_1",
+        "attempt_id": "874293",
+        "can_view_submission": true,
+        "can_view_gradebook_record": true,
+        "can_enter_grade": false,
+        "ui_behavior": "Grade entry UI is missing/disabled or changes do not persist.",
+        "notes": "Primary instructor can see the submission and gradebook row, but cannot successfully enter or save a grade."
+      },
+      "alternate_instructor": {
+        "instructor_username": "instructor_alt_account",
+        "student_name": "Marty McFly",
+        "assignment_id": "ASSIGNMENT_1",
+        "attempt_id": "874293",
+        "can_view_submission": true,
+        "can_view_gradebook_record": true,
+        "can_enter_grade": true,
+        "ui_behavior": "Grade entry UI works and grade saves successfully.",
+        "notes": "Alternate instructor can grade the same attempt without issue."
+      },
+      "conclusion": "Likely user-specific configuration issue (role/permissions) or UI cache/session issue affecting the primary instructor account."
+    }
   }
 }
