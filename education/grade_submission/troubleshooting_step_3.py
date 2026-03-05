@@ -11,7 +11,7 @@ headers = {
 # Student and assignment we are verifying
 params = {
     "student_name": "Marty McFly",
-    "assignment_id": "ASSIGNMENT_123"
+    "assignment_id": "ASSIGNMENT_1"
 }
 
 # Send request to LMS API
