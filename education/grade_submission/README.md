@@ -4,7 +4,7 @@
 
 ## Issue Description
 
-## The instructor reported that they cannot see the student’s grade ## for a recent assignment.
+## The instructor reported that they cannot see the student’s grade for a recent assignment.
 ## However, the student repeatedly states their grade is visible on their end.
 
 
@@ -12,22 +12,19 @@
 
 ## Troubleshooting Steps:
 
-## 1, Verified student submission in the LMS API logs.
+## 1. Verify that the LMS API request for the student’s assignment data works correctly
 
-## 2. Checked that the assignment submission event was recorded via the API.
+## 2. Confirm that the student’s assignment submission was recorded in the LMS
 
-## 3. Reviewed API response times to see if there were delays in syncing data.
+## 3. Verify that the LMS created a gradebook entry for the student’s assignment attempt
 
-## 4. Tested API calls with another instructor account to see if it was user-specific.
+## 4. Test the grading process by comparing it to another instructor account in the same LMS course
 
-## 5. Checked LMS API rate limits to ensure no throttling was preventing data retrieval.
+## 5. Check whether the LMS APIs are limiting requests due to rate limits or throttling
 
 
 
 
 ## Resolution
 
-## The issue was due to a delay in the LMS’s backend API syncing.
-## The submission event was recorded, 
-## However, the API response was delayed by the system.
-## Once the API fully synchronized, the grade appeared
+## The issue was resolved by correcting the instructor’s permissions or role settings in the LMS, allowing the instructor to access the gradebook and enter the student’s grade normally.
