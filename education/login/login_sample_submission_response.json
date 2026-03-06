@@ -13,7 +13,7 @@
     "description": "Verify the student or instructor account exists in the LMS.",
     "status_code": 200,
     "user_lookup": {
-      "user_email": "student@example.edu",
+      "user_email": "martymcfly@hillvalleyhigh.edu",
       "user_found": true,
       "user_role": "student",
       "notes": "The LMS API returned a valid user account."
@@ -24,7 +24,7 @@
     "description": "Verify the LMS account status is active.",
     "status_code": 200,
     "account_status_check": {
-      "user_email": "student@example.edu",
+      "user_email": "martymcfly@hillvalleyhigh.edu",
       "account_status": "inactive",
       "notes": "The account exists but is currently inactive in the LMS."
     }
