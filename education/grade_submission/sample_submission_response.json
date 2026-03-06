@@ -3,7 +3,7 @@
     "description": "Verify the LMS API request works and parameters are transmitted correctly.",
     "status_code": 200,
     "request_parameters": {
-      "student_name": "Marty McFly",
+      "student_name": "Marty Reisman",
       "assignment_id": "ASSIGNMENT_1"
     }
   },
@@ -11,7 +11,7 @@
   "troubleshooting_step_2": {
     "description": "Verify the LMS recorded the submission event.",
     "submission_event": {
-      "student_name": "Marty McFly",
+      "student_name": "Marty Reisman",
       "assignment_id": "ASSIGNMENT_1",
       "submission_status": "submitted",
       "submitted_at": "2026-03-05T14:20:10",
@@ -22,7 +22,7 @@
   "troubleshooting_step_3": {
     "description": "Verify the gradebook entry associated with the submission was created.",
     "gradebook_record": {
-      "student_name": "Marty McFly",
+      "student_name": "Marty Reisman",
       "assignment_id": "ASSIGNMENT_1",
       "attempt_id": "874293",
       "grade_status": "needs_grading",
@@ -36,7 +36,7 @@
     "instructor_visibility_check": {
       "primary_instructor": {
         "instructor_username": "instructor_primary",
-        "student_name": "Marty McFly",
+        "student_name": "Marty Reisman",
         "assignment_id": "ASSIGNMENT_1",
         "attempt_id": "874293",
         "can_view_submission": true,
@@ -47,7 +47,7 @@
       },
       "alternate_instructor": {
         "instructor_username": "instructor_alt_account",
-        "student_name": "Marty McFly",
+        "student_name": "Marty Reisman",
         "assignment_id": "ASSIGNMENT_1",
         "attempt_id": "874293",
         "can_view_submission": true,
