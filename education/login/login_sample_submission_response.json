@@ -1,0 +1,54 @@
+{
+  "ts_step_1": {
+    "description": "Verify the LMS login service is reachable through the LMS API.",
+    "status_code": 200,
+    "login_service_check": {
+      "endpoint_checked": "/api/auth/login",
+      "service_status": "online",
+      "notes": "The LMS login endpoint responded successfully."
+    }
+  },
+
+  "ts_step_2": {
+    "description": "Verify the student or instructor account exists in the LMS.",
+    "status_code": 200,
+    "user_lookup": {
+      "user_email": "student@example.edu",
+      "user_found": true,
+      "user_role": "student",
+      "notes": "The LMS API returned a valid user account."
+    }
+  },
+
+  "ts_step_3": {
+    "description": "Verify the LMS account status is active.",
+    "status_code": 200,
+    "account_status_check": {
+      "user_email": "student@example.edu",
+      "account_status": "inactive",
+      "notes": "The account exists but is currently inactive in the LMS."
+    }
+  },
+
+  "ts_step_4": {
+    "description": "Verify authentication attempt using LMS credentials.",
+    "status_code": 403,
+    "auth_attempt": {
+      "login_attempt": "failed",
+      "reason": "Account inactive",
+      "notes": "Authentication fails because the LMS account is inactive."
+    }
+  },
+
+  "ts_step_5": {
+    "description": "Check LMS API rate limits to ensure login attempts are not being throttled.",
+    "status_code": 200,
+    "rate_limit_check": {
+      "endpoint_checked": "/api/auth/login",
+      "limit": 100,
+      "remaining": 97,
+      "throttled": false,
+      "notes": "The LMS API rate limit is not preventing login attempts."
+    }
+  }
+}
