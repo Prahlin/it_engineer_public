@@ -15,14 +15,22 @@ def get_step(step_key: str) -> dict:
 
 def run_step_4_check(instructor_username: str) -> dict:
     """
-    Step 4 principle (per the case): test API calls with another instructor account
-    to determine whether the issue is user-specific.
+    Step 4: test grade/gradebook visibility using a second instructor account
+    to determine whether the issue is user-specific (permissions/role/cache).
 
-    This function returns the canned evidence from sample_submission_response.json
-    and also echoes the instructor used for the check (so the step file can display it).
+    Returns the stored Step 4 evidence and also includes which instructor username
+    was used for verification.
     """
     step = get_step("troubleshooting_step_4")
-    # Add runtime context without changing the stored evidence structure too much
     step = dict(step)  # shallow copy
     step["checked_instructor_username"] = instructor_username
     return step
+
+
+def run_step_5_rate_limit_check() -> dict:
+    """
+    Step 5: check LMS API rate limits to ensure throttling isn't blocking data retrieval.
+    Returns the stored Step 5 evidence.
+    """
+    step = get_step("troubleshooting_step_5")
+    return dict(step)  # shallow copy

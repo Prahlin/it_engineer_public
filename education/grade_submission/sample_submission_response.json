@@ -58,5 +58,21 @@
       },
       "conclusion": "Likely user-specific configuration issue (role/permissions) or UI cache/session issue affecting the primary instructor account."
     }
+  },
+
+  "troubleshooting_step_5": {
+    "description": "Checked LMS API rate limits to ensure no throttling was preventing data retrieval.",
+    "status_code": 200,
+    "rate_limit_check": {
+      "endpoint_checked": "/api/gradebook/entries?assignment_id=ASSIGNMENT_1&student=Marty%20McFly",
+      "rate_limit_headers": {
+        "limit": 120,
+        "remaining": 118,
+        "reset_epoch_seconds": 1772730300
+      },
+      "throttled": false,
+      "observed_http_status": 200,
+      "notes": "No 429 responses observed. Remaining requests are available; throttling is not preventing grade retrieval."
+    }
   }
 }
