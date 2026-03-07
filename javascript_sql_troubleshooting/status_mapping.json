@@ -1,0 +1,5 @@
+{
+  "draft": ["draft", "in_progress", "pending"],
+  "published": ["published", "live", "released"],
+  "archived": ["archived", "inactive", "retired"]
+}
