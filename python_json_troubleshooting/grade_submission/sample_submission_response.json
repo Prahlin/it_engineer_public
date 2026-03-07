@@ -1,0 +1,78 @@
+{
+  "troubleshooting_step_1": {
+    "description": "Verify the LMS API request works and parameters are transmitted correctly.",
+    "status_code": 200,
+    "request_parameters": {
+      "student_name": "Marty Reisman",
+      "assignment_id": "ASSIGNMENT_1"
+    }
+  },
+
+  "troubleshooting_step_2": {
+    "description": "Verify the LMS recorded the submission event.",
+    "submission_event": {
+      "student_name": "Marty Reisman",
+      "assignment_id": "ASSIGNMENT_1",
+      "submission_status": "submitted",
+      "submitted_at": "2026-03-05T14:20:10",
+      "attempt_id": "874293"
+    }
+  },
+
+  "troubleshooting_step_3": {
+    "description": "Verify the gradebook entry associated with the submission was created.",
+    "gradebook_record": {
+      "student_name": "Marty Reisman",
+      "assignment_id": "ASSIGNMENT_1",
+      "attempt_id": "874293",
+      "grade_status": "needs_grading",
+      "score": null,
+      "graded_at": null
+    }
+  },
+
+  "troubleshooting_step_4": {
+    "description": "Test grade/gradebook visibility using a second instructor account to determine whether the issue is user-specific (permissions/role/cache).",
+    "instructor_visibility_check": {
+      "primary_instructor": {
+        "instructor_username": "instructor_primary",
+        "student_name": "Marty Reisman",
+        "assignment_id": "ASSIGNMENT_1",
+        "attempt_id": "874293",
+        "can_view_submission": true,
+        "can_view_gradebook_record": true,
+        "can_enter_grade": false,
+        "ui_behavior": "Grade entry UI is missing/disabled or changes do not persist.",
+        "notes": "Primary instructor can see the submission and gradebook row, but cannot successfully enter or save a grade."
+      },
+      "alternate_instructor": {
+        "instructor_username": "instructor_alt_account",
+        "student_name": "Marty Reisman",
+        "assignment_id": "ASSIGNMENT_1",
+        "attempt_id": "874293",
+        "can_view_submission": true,
+        "can_view_gradebook_record": true,
+        "can_enter_grade": true,
+        "ui_behavior": "Grade entry UI works and grade saves successfully.",
+        "notes": "Alternate instructor can grade the same attempt without issue."
+      },
+      "conclusion": "Likely user-specific configuration issue (role/permissions) or UI cache/session issue affecting the primary instructor account."
+    }
+  },
+
+  "troubleshooting_step_5": {
+    "description": "Checked LMS API rate limits to ensure no throttling was preventing data retrieval.",
+    "status_code": 200,
+    "rate_limit_check": {
+      "endpoint_checked": "/api/gradebook/entries?assignment_id=ASSIGNMENT_1&student=Marty%20McFly",
+      "rate_limit_headers": {
+        "limit": 120,
+        "remaining": 118,
+        "reset_epoch_seconds": 1772730300
+      },
+      "throttled": false,
+      "observed_http_status": 200,
+      "notes": "No 429 responses observed. Remaining requests are available; throttling is not preventing grade retrieval."
+    }
+  }
+}
