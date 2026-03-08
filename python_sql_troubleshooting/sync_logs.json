@@ -1,0 +1,12 @@
+[
+  {
+    "session_id": "conf_001",
+    "status": "success",
+    "timestamp": "2026-03-07T12:00:00Z"
+  },
+  {
+    "session_id": "conf_002",
+    "status": "pending",
+    "timestamp": "2026-03-07T12:05:00Z"
+  }
+]
