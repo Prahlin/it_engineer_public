@@ -25,7 +25,7 @@
 ## Step 5: Retest LTI Sync and Verify Roster
 ### After debugging, trigger another LTI sync and ensure the club roster updates properly in the LMS.
 
-### Final Result
+## Final Result
 
 ### The final verification step returns HTTP 404, indicating that the roster sync endpoint still fails to retrieve the expected JSON payload.
 
