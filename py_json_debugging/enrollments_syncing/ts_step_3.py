@@ -7,6 +7,12 @@ json_url = (
 
 # Retrieve JSON data
 response = requests.get(json_url)
+
+# Debugging: Print the raw response to see what we received
+print("Debug: Raw response text:")
+print(response.text)
+
+# Parse JSON data
 status_data = response.json()
 
 # Debugging: Check the raw payload
