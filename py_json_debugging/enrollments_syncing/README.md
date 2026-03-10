@@ -8,7 +8,7 @@
 
 ## Troubleshooting Steps
 
-### Step 1: Validate LTI Launch and Club Listing
+## Step 1: Validate LTI Launch and Club Listing
 ### Ensure that the LTI tool launches correctly and that the robotics club appears in the LMS listing.
 
 ## Step 2: Inspect JSON Grade Passback Payload
