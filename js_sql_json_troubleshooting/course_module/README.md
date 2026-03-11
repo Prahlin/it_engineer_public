@@ -92,10 +92,3 @@
 ## - Role permission configuration
 ## - Cached LMS data
 ## - Backend data synchronization problems
-
-## Following these troubleshooting steps helps identify and resolve the issue efficiently.
-
-# Intended Audience
-## - Technical Support Engineers
-## - LMS Administrators
-## - Platform Support Teams
