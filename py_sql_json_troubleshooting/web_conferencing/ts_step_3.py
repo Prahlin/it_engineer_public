@@ -1,7 +1,7 @@
 import requests
 
 def fetch_enrollments():
-    url = "https://raw.githubusercontent.com/Prahlin/it_engineer_public/main/python_sql_troubleshooting/enrollments.json"  # Raw endpoint for enrollments
+    url = "https://raw.githubusercontent.com/Prahlin/it_engineer_public/main/py_sql_json_troubleshooting/web_conferencing/enrollments.json"  # Raw endpoint for enrollments
     response = requests.get(url)
     response.raise_for_status()  # Ensure the request was successful
     return response.json()

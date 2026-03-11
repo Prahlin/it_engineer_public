@@ -1,7 +1,7 @@
 import requests
 
 def fetch_permissions():
-    url = "https://raw.githubusercontent.com/Prahlin/it_engineer_public/main/python_sql_troubleshooting/permissions.json"  # Example endpoint for permissions
+    url = "https://raw.githubusercontent.com/Prahlin/it_engineer_public/main/py_sql_json_troubleshooting/web_conferencing/permissions.json"  # Example endpoint for permissions
     response = requests.get(url)
     response.raise_for_status()
     return response.json()

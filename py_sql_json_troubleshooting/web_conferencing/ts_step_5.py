@@ -1,7 +1,7 @@
 import requests
 
 def fetch_sync_logs():
-    url = "https://raw.githubusercontent.com/Prahlin/it_engineer_public/main/python_sql_troubleshooting/sync_logs.json"  # Replace with real raw URL once created
+    url = "https://raw.githubusercontent.com/Prahlin/it_engineer_public/main/py_sql_json_troubleshooting/web_conferencing/sync_logs.json"  # Replace with real raw URL once created
     response = requests.get(url)
     response.raise_for_status()  # Ensure request was successful
     return response.json()

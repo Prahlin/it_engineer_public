@@ -1,7 +1,7 @@
 import requests
 
 def fetch_session_data():
-    url = "https://raw.githubusercontent.com/Prahlin/it_engineer_public/main/python_sql_troubleshooting/conference_session.json"  # Example URL
+    url = "https://raw.githubusercontent.com/Prahlin/it_engineer_public/main/py_sql_json_troubleshooting/web_conferencing/conference_session.json"  # Example URL
     response = requests.get(url)
     response.raise_for_status()  # Ensure the request was successful
     return response.json()

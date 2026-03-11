@@ -63,7 +63,3 @@
 ## - Enrollment configuration
 ## - Access permissions
 ## - LMS synchronization issues
-
-# Intended Audience
-## - Technical Support Engineers
-## - LMS Administrators
