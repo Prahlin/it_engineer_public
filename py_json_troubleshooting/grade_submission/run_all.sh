@@ -1,6 +1,6 @@
 #!/bin/bash
 
 for script in ./*.py; do
-    python "$script"
+    python3 "$script"
     printf "\n\n"
 done
