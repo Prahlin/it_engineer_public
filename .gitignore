@@ -1,2 +1,5 @@
 .DS_Store
 *.save
+node_modules/
+.expo/
+dist/
